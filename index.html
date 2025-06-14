@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CF2B SARL - Expert BTP Mayotte</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -9,7 +9,7 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
+      background-color: #f4f4f4;
       color: #333;
     }
     header {
@@ -19,83 +19,121 @@
       text-align: center;
     }
     header img {
-      height: 100px;
-      margin-bottom: 15px;
+      height: 80px;
+      margin-bottom: 10px;
     }
     nav {
       background: #16324f;
-      padding: 15px;
+      padding: 12px;
       text-align: center;
     }
     nav a {
       color: white;
-      margin: 0 20px;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1em;
+      font-size: 1em;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #ffcc00;
+      color: #ffc107;
     }
     section {
       padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
     }
     h2 {
       text-align: center;
       color: #1e3d59;
       margin-bottom: 20px;
-      border-bottom: 2px solid #ccc;
-      display: inline-block;
-      padding-bottom: 5px;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 60px;
+      background: #ffc107;
+      margin: 10px auto 0;
     }
     .services ul {
       list-style: none;
       padding: 0;
-      max-width: 800px;
-      margin: auto;
     }
     .services li {
-      background: #fff;
-      padding: 15px 20px;
+      background: white;
+      padding: 20px;
       margin: 10px 0;
       border-left: 5px solid #1e3d59;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 5px;
     }
     .grid {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 20px;
+      justify-content: center;
     }
     .gallery img {
-      width: 300px;
+      width: 100%;
+      max-width: 300px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
-    .stats, .contact {
-      max-width: 800px;
-      margin: auto;
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .contact, .stats {
       background: white;
-      padding: 20px;
+      padding: 30px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-top: 30px;
     }
-    .contact a {
-      color: #1e3d59;
-      font-weight: bold;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: #1e3d59;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    button:hover {
+      background: #16324f;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      margin-top: 20px;
     }
     footer {
       background: #1e3d59;
       color: white;
       text-align: center;
       padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.jpg" alt="Logo CF2B SARL" />
+    <img src="logo.jpg" alt="Logo CF2B SARL">
     <h1>CF2B SARL - Ciment, Fer, Béton, Bâtiment</h1>
     <p>Votre expert en construction à Mayotte depuis 2008</p>
   </header> <nav>
@@ -136,7 +174,15 @@
     <p><strong>Adresse :</strong> 150 Av. Ahmada Soumaila, Carrefour Ya Coconi, 97640 SADA, Mayotte</p>
     <p><strong>Gérant :</strong> M. ABDOU Toihir</p>
     <p><strong>Email :</strong> <a href="mailto:contact@cf2b.yt">contact@cf2b.yt</a></p>
-    <p><strong>Téléphone :</strong> <a href="tel:+262639209333">+262 639 20 93 33</a></p>
+    <p><strong>Téléphone :</strong> <a href="tel:+262639209333">+262 639 20 93 33</a></p><form>
+  <input type="text" placeholder="Votre nom" required>
+  <input type="email" placeholder="Votre email" required>
+  <textarea placeholder="Votre message" rows="5" required></textarea>
+  <button type="submit">Envoyer</button>
+</form>
+
+<iframe src="https://www.google.com/maps?q=150+Av.+Ahmada+Soumaila,+Sada,+Mayotte&output=embed"></iframe>
+
   </section> <footer>
     © 2025 CF2B SARL - Tous droits réservés
   </footer>
