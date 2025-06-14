@@ -1,76 +1,145 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CF2B SARL – Construction à Mayotte</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CF2B SARL - Expert BTP Mayotte</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #111;
-      --secondary: #444;
-      --accent: #DAA520; /* couleur inspirée du ciment/béton */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
     }
-    body { margin:0; font-family: Arial,sans-serif; background:#f0f0f0; color:#333; }
-    header, footer { background:var(--primary); color:#fff; text-align:center; padding:1rem; }
-    header img { max-height:100px; }
-    nav { background:var(--secondary); text-align:center; padding:0.5rem; }
-    nav a { color:#fff; margin:0 1rem; text-decoration:none; }
-    .hero { background:var(--primary); color:#fff; text-align:center; padding:4rem 1rem; }
-    .container { max-width:1000px; margin:auto; padding:2rem; background:#fff; }
-    h2 { color:var(--primary); border-bottom:2px solid var(--accent); padding-bottom:0.5rem; }
-    .services, .stats { display:flex; flex-wrap:wrap; gap:1rem; }
-    .services div, .stats div { flex:1; min-width:200px; background:#fafafa; padding:1rem; border:1px solid #ddd; }
-    footer p { margin:0; }
+    header {
+      background: #1e3d59;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header img {
+      height: 100px;
+      margin-bottom: 15px;
+    }
+    nav {
+      background: #16324f;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #1e3d59;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ccc;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+      max-width: 800px;
+      margin: auto;
+    }
+    .services li {
+      background: #fff;
+      padding: 15px 20px;
+      margin: 10px 0;
+      border-left: 5px solid #1e3d59;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .gallery img {
+      width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .stats, .contact {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .contact a {
+      color: #1e3d59;
+      font-weight: bold;
+    }
+    footer {
+      background: #1e3d59;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.jpg" alt="Logo CF2B SARL">
-    <h1>CF2B SARL</h1>
-    <p>CIMENT – FER – BÉTON – BÂTIMENT</p>
-  </header>
-
-  <nav>
+    <img src="logo.jpg" alt="Logo CF2B SARL" />
+    <h1>CF2B SARL - Ciment, Fer, Béton, Bâtiment</h1>
+    <p>Votre expert en construction à Mayotte depuis 2008</p>
+  </header> <nav>
     <a href="#services">Services</a>
-    <a href="#projets">Projets</a>
+    <a href="#gallery">Réalisations</a>
+    <a href="#stats">Chiffres</a>
     <a href="#contact">Contact</a>
-  </nav>
-
-  <section class="hero">
-    <h2>Votre expert en construction à Mayotte</h2>
-    <p>Gros œuvre, rénovation, VRD et aménagements extérieurs.</p>
-  </section>
-
-  <section class="container" id="services">
-    <h2>Nos services</h2>
-    <div class="services">
-      <div><strong>Gros œuvre & fondations</strong><br>Maçonnerie, ferraillage, dallage béton.</div>
-      <div><strong>Rénovation & finitions</strong><br>Ravalement, peinture, aménagement intérieur.</div>
-      <div><strong>VRD & espaces verts</strong><br>Voirie, réseaux, aménagements extérieurs.</div>
-      <div><strong>Travaux publics</strong><br>Démolition, terrassement, projets publics.</div>
+  </nav> <section class="services" id="services">
+    <h2>Nos Services</h2>
+    <ul>
+      <li><strong>Gros œuvre & fondations :</strong> Maçonnerie, ferraillage, dallage béton</li>
+      <li><strong>Rénovation & finitions :</strong> Ravalement, peinture, aménagement intérieur</li>
+      <li><strong>VRD & espaces verts :</strong> Voirie, réseaux divers, extérieurs</li>
+      <li><strong>Travaux publics :</strong> Démolition, terrassement, projets publics</li>
+    </ul>
+  </section> <section class="gallery" id="gallery">
+    <h2>Quelques réalisations</h2>
+    <div class="grid">
+      <img src="1.jpg" alt="Structure en cours de construction">
+      <img src="2.jpg" alt="Peinture intérieures">
+      <img src="3.jpg" alt="Peinture intérieure">
+      <img src="4.jpg" alt="Échafaudage facade">
+      <img src="5.jpg" alt="Échafaudage facade">
+      <img src="6.jpg" alt="Peinture EXT">
+      <img src="7.jpg" alt="engin de terassement">
+      <img src="8.jpg" alt="Déchets encombrants">
+      <img src="9.jpg" alt="Déchets encombrants">
+      <img src="10.jpg" alt="Déchets encombrants">
+      <img src="11.jpg" alt="Déchets encombrants">
+      <img src="12.jpg" alt="Déchets encombrants">
     </div>
-  </section>
-
-  <section class="container" id="projets">
-    <h2>Chiffres & projets</h2>
-    <div class="stats">
-      <div><strong>Créé en :</strong><br>2020</div>
-      <div><strong>Capital :</strong><br>1 000 €</div>
-      <div><strong>Marchés publics récents :</strong><br>Micro-crèche (178 750 €), Terrassement (96 300 €)</div>
-    </div>
-    <p>Entreprise active, immatriculée à Sada et dirigeé par Abdou Toihir, spécialisée en construction et aménagement depuis 2020.</p>
-  </section>
-
-  <section class="container" id="contact">
+  </section> <section class="stats" id="stats">
+    <h2>Quelques chiffres</h2>
+    <p><strong>Créé en :</strong> 2008<br />
+       <strong>Capital :</strong> 1 000 €<br />
+       <strong>Marchés publics récents :</strong> Micro-crèche (178 750 €), Terrassement (96 300 €)</p>
+  </section> <section class="contact" id="contact">
     <h2>Contactez-nous</h2>
     <p><strong>Adresse :</strong> 150 Av. Ahmada Soumaila, Carrefour Ya Coconi, 97640 SADA, Mayotte</p>
-    <p><strong>Gérant :</strong> M. Abdou Toihir</p>
-    <p><strong>Email :</strong> contact@cf2b.yt</p>
-    <p><strong>Téléphone :</strong> +262 639 00 00 00</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 CF2B SARL - Tous droits réservés</p>
+    <p><strong>Gérant :</strong> M. ABDOU Toihir</p>
+    <p><strong>Email :</strong> <a href="mailto:contact@cf2b.yt">contact@cf2b.yt</a></p>
+    <p><strong>Téléphone :</strong> <a href="tel:+262639209333">+262 639 20 93 33</a></p>
+  </section> <footer>
+    © 2025 CF2B SARL - Tous droits réservés
   </footer>
 </body>
 </html>
