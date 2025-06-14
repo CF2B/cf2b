@@ -1,12 +1,7 @@
 <!DOCTYPE html><html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; frame-src https://www.google.com;">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CF2B SARL - Expert BTP Mayotte</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -75,14 +70,14 @@
       border-radius: 5px;
     }
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 20px;
+      justify-content: center;
     }
     .gallery img {
       width: 100%;
-      height: auto;
-      object-fit: cover;
+      max-width: 300px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s;
@@ -179,10 +174,10 @@
     <p><strong>Adresse :</strong> 150 Av. Ahmada Soumaila, Carrefour Ya Coconi, 97640 SADA, Mayotte</p>
     <p><strong>Gérant :</strong> M. ABDOU Toihir</p>
     <p><strong>Email :</strong> <a href="mailto:contact@cf2b.yt">contact@cf2b.yt</a></p>
-    <p><strong>Téléphone :</strong> <a href="tel:+262639209333">+262 639 20 93 33</a></p><form action="https://formspree.io/f/xwkgdvjq" method="POST">
-  <input type="text" name="name" placeholder="Votre nom" required>
-  <input type="email" name="email" placeholder="Votre email" required>
-  <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
+    <p><strong>Téléphone :</strong> <a href="tel:+262639209333">+262 639 20 93 33</a></p><form>
+  <input type="text" placeholder="Votre nom" required>
+  <input type="email" placeholder="Votre email" required>
+  <textarea placeholder="Votre message" rows="5" required></textarea>
   <button type="submit">Envoyer</button>
 </form>
 
