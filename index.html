@@ -1,37 +1,101 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; frame-src https://www.google.com;">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta name="referrer" content="no-referrer">
-  <title>CF2B SARL - Sécurisé</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CF2B SARL - Expert BTP Mayotte</title>
+  <link href=https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap rel="stylesheet">
   <style>
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
     }
-    .grid img {
+    header {
+      background: #1e3d59;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header img {
+      height: 80px;
+      margin-bottom: 10px;
+    }
+    nav {
+      background: #16324f;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffc107;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #1e3d59;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 60px;
+      background: #ffc107;
+      margin: 10px auto 0;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+    }
+    .services li {
+      background: white;
+      padding: 20px;
+      margin: 10px 0;
+      border-left: 5px solid #1e3d59;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 5px;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .gallery img {
       width: 100%;
-      height: auto;
-      border-radius: 6px;
-      object-fit: cover;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s;
     }
-    .grid img:hover {
+    .gallery img:hover {
       transform: scale(1.05);
+    }
+    .contact, .stats {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-top: 30px;
     }
     form {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-top: 20px;
     }
     input, textarea {
       padding: 10px;
@@ -48,61 +112,79 @@
       cursor: pointer;
       font-size: 1em;
     }
+    button:hover {
+      background: #16324f;
+    }
     iframe {
+      border: none;
       width: 100%;
       height: 300px;
-      border: none;
       border-radius: 8px;
       margin-top: 20px;
+    }
+    footer {
+      background: #1e3d59;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="logo.jpg" alt="Logo CF2B SARL">
+    <h1>CF2B SARL - Ciment, Fer, Béton, Bâtiment</h1>
+    <p>Votre expert en construction à Mayotte depuis 2008</p>
+  </header> <nav>
+    <a href="#services">Services</a>
+    <a href="#gallery">Réalisations</a>
+    <a href="#stats">Chiffres</a>
+    <a href="#contact">Contact</a>
+  </nav> <section class="services" id="services">
+    <h2>Nos Services</h2>
+    <ul>
+      <li><strong>Gros œuvre & fondations :</strong> Maçonnerie, ferraillage, dallage béton</li>
+      <li><strong>Rénovation & finitions :</strong> Ravalement, peinture, aménagement intérieur</li>
+      <li><strong>VRD & espaces verts :</strong> Voirie, réseaux divers, extérieurs</li>
+      <li><strong>Travaux publics :</strong> Démolition, terrassement, projets publics</li>
+    </ul>
+  </section> <section class="gallery" id="gallery">
+    <h2>Quelques réalisations</h2>
+    <div class="grid">
+       <img src="2.jpg" alt="Peinture intérieures">
+      <img src="3.jpg" alt="Peinture intérieure">
+      <img src="4.jpg" alt="Échafaudage facade">
+      <img src="5.jpg" alt="Échafaudage facade">
+      <img src="6.jpg" alt="Peinture EXT">
+      <img src="7.jpg" alt="engin de terassement">
+      <img src="8.jpg" alt="Déchets encombrants">
+      <img src="9.jpg" alt="Déchets encombrants">
+      <img src="10.jpg" alt="Déchets encombrants">
+      <img src="11.jpg" alt="Déchets encombrants">
+      <img src="12.jpg" alt="Déchets encombrants">
+    </div>
+  </section> <section class="stats" id="stats">
+    <h2>Quelques chiffres</h2>
+    <p><strong>Créé en :</strong> 2008<br />
+       <strong>Capital :</strong> 1 000 €<br />
+       <strong>Marchés publics récents :</strong> Micro-crèche (178 750 €), Terrassement (96 300 €)</p>
+  </section> <section class="contact" id="contact">
+    <h2>Contactez-nous</h2>
+    <p><strong>Adresse :</strong> 150 Av. Ahmada Soumaila, Carrefour Ya Coconi, 97640 SADA, Mayotte</p>
+    <p><strong>Gérant :</strong> M. ABDOU Toihir</p>
+    <p><strong>Email :</strong> <a href=mailto:contact@cf2b.yt>contact@cf2b.yt</a></p>
+    <p><strong>Téléphone :</strong> <a href=tel:+262639209333>+262 639 20 93 33</a></p><form>
+  <input type="text" placeholder="Votre nom" required>
+  <input type="email" placeholder="Votre email" required>
+  <textarea placeholder="Votre message" rows="5" required></textarea>
+  <button type="submit">Envoyer</button>
+</form>
 
-<section class="gallery" id="gallery">
-  <h2>Quelques réalisations</h2>
-  <div class="grid">
-    <img src="2.jpg" alt="Peinture intérieure">
-    <img src="3.jpg" alt="Peinture intérieure">
-    <img src="4.jpg" alt="Échafaudage façade">
-    <img src="5.jpg" alt="Échafaudage façade">
-    <img src="6.jpg" alt="Peinture extérieure">
-    <img src="7.jpg" alt="Engin de terrassement">
-    <img src="8.jpg" alt="Déchets encombrants">
-    <img src="9.jpg" alt="Déchets encombrants">
-    <img src="10.jpg" alt="Déchets encombrants">
-    <img src="11.jpg" alt="Déchets encombrants">
-    <img src="12.jpg" alt="Déchets encombrants">
-  </div>
-</section>
+<iframe src=https://www.google.com/maps?q=150+Av.+Ahmada+Soumaila,+Sada,+Mayotte&output=embed></iframe>
 
-<section class="stats" id="stats">
-  <h2>Quelques chiffres</h2>
-  <p><strong>Créé en :</strong> 2008<br />
-     <strong>Capital :</strong> 1 000 €<br />
-     <strong>Marchés publics récents :</strong> Micro-crèche (178 750 €), Terrassement (96 300 €)</p>
-</section>
-
-<section class="contact" id="contact">
-  <h2>Contactez-nous</h2>
-  <p><strong>Adresse :</strong> 150 Av. Ahmada Soumaila, Carrefour Ya Coconi, 97640 SADA, Mayotte</p>
-  <p><strong>Gérant :</strong> M. ABDOU Toihir</p>
-  <p><strong>Email :</strong> <a href="mailto:contact@cf2b.yt">contact@cf2b.yt</a></p>
-  <p><strong>Téléphone :</strong> <a href="tel:+262639209333">+262 639 20 93 33</a></p>
-
-  <form action="https://formspree.io/f/xwkgdvjq" method="POST">
-    <input type="text" name="name" placeholder="Votre nom" required>
-    <input type="email" name="email" placeholder="Votre email" required>
-    <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-
-  <iframe src="https://www.google.com/maps?q=150+Av.+Ahmada+Soumaila,+Sada,+Mayotte&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</section>
-
-<footer>
-  © 2025 CF2B SARL - Tous droits réservés
-</footer>
-
+  </section> <footer>
+    © 2025 CF2B SARL - Tous droits réservés
+  </footer>
 </body>
 </html>
