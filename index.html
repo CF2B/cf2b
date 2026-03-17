@@ -1,204 +1,1130 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CF2B SARL - Expert BTP Mayotte</title>
-  <link href=https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap rel="stylesheet">
+  <title>CF2B SARL - Construction, gros œuvre et terrassement à Mayotte</title>
+  <meta name="description" content="CF2B SARL, entreprise de construction à Mayotte depuis 2008 : gros œuvre, fondations, terrassement, rénovation, VRD et réalisations de chantier." />
   <style>
+    :root {
+      --bg: #0b1220;
+      --bg-2: #101a2d;
+      --card: #ffffff;
+      --muted: #5c667a;
+      --text: #162033;
+      --text-light: #f7f9fc;
+      --line: rgba(255,255,255,0.12);
+      --accent: #ff8a00;
+      --accent-2: #ffb347;
+      --shadow: 0 18px 45px rgba(7, 13, 25, 0.16);
+      --radius: 20px;
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Roboto', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: var(--text);
+      line-height: 1.6;
     }
-    header {
-      background: #1e3d59;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
     }
-    header img {
-      height: 80px;
-      margin-bottom: 10px;
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+      background: rgba(11, 18, 32, 0.86);
+      border-bottom: 1px solid var(--line);
     }
-    nav {
-      background: #16324f;
-      padding: 12px;
-      text-align: center;
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1em;
-      transition: color 0.3s;
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--text-light);
+      min-width: 0;
     }
-    nav a:hover {
-      color: #ffc107;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      text-align: center;
-      color: #1e3d59;
-      margin-bottom: 20px;
-      position: relative;
-    }
-    h2::after {
-      content: '';
-      display: block;
-      height: 3px;
-      width: 60px;
-      background: #ffc107;
-      margin: 10px auto 0;
-    }
-    .services ul {
-      list-style: none;
-      padding: 0;
-    }
-    .services li {
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      object-fit: contain;
       background: white;
-      padding: 20px;
-      margin: 10px 0;
-      border-left: 5px solid #1e3d59;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      border-radius: 5px;
+      padding: 6px;
     }
-    .grid {
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-sub {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.88rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: rgba(255,255,255,0.88);
+      font-weight: 600;
+      font-size: 0.96rem;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      color: var(--accent-2);
+    }
+
+    .cta-mini {
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(255, 138, 0, 0.25);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(115deg, rgba(8, 14, 26, 0.88), rgba(11, 18, 32, 0.62)),
+        url('2759bc70-4fb4-4078-9fa9-b04750bc24db.png') center/cover no-repeat;
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -120px auto;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(255,138,0,0.18), transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      min-height: calc(100vh - 78px);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 44px;
+      padding: 46px 0 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 5vw, 4.8rem);
+      line-height: 1.03;
+      margin: 0 0 16px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p.lead {
+      margin: 0;
+      max-width: 650px;
+      color: rgba(255,255,255,0.84);
+      font-size: clamp(1rem, 1.6vw, 1.18rem);
+    }
+
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 14px;
+      margin: 28px 0 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
-    }
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    .contact, .stats {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-top: 30px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
       gap: 10px;
+      padding: 15px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
-    input, textarea {
-      padding: 10px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      background: #1e3d59;
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: var(--accent);
       color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1em;
+      box-shadow: 0 14px 28px rgba(255,138,0,0.28);
     }
-    button:hover {
-      background: #16324f;
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.16);
     }
-    iframe {
-      border: none;
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .point {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .point strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 2px;
+    }
+
+    .hero-card {
+      position: relative;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 22px 50px rgba(0,0,0,0.22);
+    }
+
+    .hero-card img {
       width: 100%;
-      height: 300px;
-      border-radius: 8px;
-      margin-top: 20px;
+      height: 100%;
+      min-height: 480px;
+      object-fit: cover;
     }
-    footer {
-      background: #1e3d59;
+
+    .hero-card-badge {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      right: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(11, 18, 32, 0.78);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card-badge strong {
+      display: block;
       color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-badge span {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.94rem;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 34px;
+    }
+
+    .kicker {
+      color: var(--accent);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.84rem;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: #111a2b;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 520px;
+      color: var(--muted);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .panel,
+    .service,
+    .stat,
+    .reason,
+    .contact-card,
+    .gallery-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      padding: 30px;
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+
+    .panel ul {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .panel li {
+      display: flex;
+      gap: 12px;
+      align-items: start;
+      color: #243148;
+      font-weight: 600;
+    }
+
+    .panel li::before {
+      content: "✓";
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,138,0,0.14);
+      color: #d66f00;
+      font-weight: 900;
+      margin-top: 1px;
+    }
+
+    .mini-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      height: 100%;
+    }
+
+    .mini-gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .services-grid,
+    .stats-grid,
+    .reasons-grid,
+    .contact-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .service {
+      padding: 26px;
+      transition: transform .2s ease, box-shadow .2s ease;
+      border: 1px solid rgba(16, 26, 45, 0.06);
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 44px rgba(7,13,25,0.14);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(255,138,0,0.16), rgba(255,179,71,0.26));
+      color: #bf6700;
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+      font-weight: 900;
+    }
+
+    .service h3,
+    .reason h3,
+    .contact-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      color: #111a2b;
+    }
+
+    .service p,
+    .reason p,
+    .contact-card p,
+    .stat p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .gallery-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .chip {
+      border: 1px solid rgba(16,26,45,0.09);
+      background: white;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 700;
+      color: #2b3850;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-card {
+      grid-column: span 4;
+      overflow: hidden;
+      position: relative;
+      cursor: zoom-in;
+      min-height: 290px;
+      border: 1px solid rgba(16, 26, 45, 0.06);
+    }
+
+    .gallery-card.tall { min-height: 410px; }
+    .gallery-card.wide { grid-column: span 8; min-height: 320px; }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .gallery-card:hover img { transform: scale(1.06); }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 18px;
+      background: linear-gradient(to top, rgba(10, 16, 29, 0.8), rgba(10, 16, 29, 0));
+      color: white;
+    }
+
+    .gallery-overlay strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .gallery-overlay span {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .stats-wrap {
+      background: linear-gradient(180deg, #0f182b, #0b1220);
+      color: white;
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: 0 20px 50px rgba(10,16,29,0.25);
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 18px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      color: white;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: none;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+      line-height: 1;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .stat p { color: rgba(255,255,255,0.76); }
+
+    .reasons-grid { grid-template-columns: repeat(4, 1fr); }
+
+    .reason {
+      padding: 24px;
+      border: 1px solid rgba(16,26,45,0.06);
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      padding: 30px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: start;
+      gap: 14px;
+      padding: 16px 18px;
+      background: #f7f9fc;
+      border-radius: 16px;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #162033;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .contact-card iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      border: 0;
+      border-radius: 22px;
+    }
+
+    form {
+      margin-top: 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 15px 16px;
+      border-radius: 14px;
+      border: 1px solid #d8e0ed;
+      background: #fbfcfe;
+      color: #162033;
+      font: inherit;
+      resize: vertical;
+    }
+
+    textarea { min-height: 150px; }
+
+    button {
+      border: 0;
+      border-radius: 14px;
+      padding: 15px 18px;
+      font: inherit;
+      font-weight: 800;
+      background: #162033;
+      color: white;
+      cursor: pointer;
+    }
+
+    .footer {
+      padding: 28px 0 34px;
+      color: #6d788c;
+      font-size: 0.96rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid rgba(16,26,45,0.08);
+      padding-top: 22px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1200;
+      width: 62px;
+      height: 62px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: white;
+      font-size: 1.7rem;
+      box-shadow: 0 18px 35px rgba(37, 211, 102, 0.3);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 10, 18, 0.88);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 26px;
+      z-index: 2000;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: min(1200px, 95vw);
+      max-height: 88vh;
+      border-radius: 18px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+      object-fit: contain;
+      background: #111;
+    }
+
+    .close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      border: 0;
+      background: rgba(255,255,255,0.12);
+      color: white;
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .intro-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .stats-grid,
+      .reasons-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-card,
+      .gallery-card.wide { grid-column: span 6; }
+      .gallery-card.tall { min-height: 340px; }
+      .hero-card img { min-height: 380px; }
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        min-height: auto;
+        padding: 14px 0;
+        flex-wrap: wrap;
+      }
+
+      .menu {
+        width: 100%;
+        justify-content: space-between;
+        overflow-x: auto;
+        gap: 16px;
+        padding-bottom: 6px;
+      }
+
+      .hero-grid {
+        min-height: auto;
+        padding-top: 34px;
+      }
+
+      .hero-points,
+      .services-grid,
+      .stats-grid,
+      .reasons-grid,
+      .mini-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-card,
+      .gallery-card.wide {
+        grid-column: span 1;
+        min-height: 290px;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .stats-wrap,
+      .panel,
+      .contact-card {
+        padding: 24px;
+      }
+
+      .footer-inner,
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.jpg" alt="Logo CF2B SARL">
-    <h1>CF2B SARL - Ciment, Fer, Béton, Bâtiment</h1>
-    <p>Votre expert en construction à Mayotte depuis 2008</p>
-  </header> <nav>
-    <a href="#services">Services</a>
-    <a href="#gallery">Réalisations</a>
-    <a href="#stats">Chiffres</a>
-    <a href="#contact">Contact</a>
-  </nav> <section class="services" id="services">
-    <h2>Nos Services</h2>
-    <ul>
-      <li><strong>Gros œuvre & fondations :</strong> Maçonnerie, ferraillage, dallage béton</li>
-      <li><strong>Rénovation & finitions :</strong> Ravalement, peinture, aménagement intérieur</li>
-      <li><strong>VRD & espaces verts :</strong> Voirie, réseaux divers, extérieurs</li>
-      <li><strong>Travaux publics :</strong> Démolition, terrassement, projets publics</li>
-    </ul>
-  </section> <section class="gallery" id="gallery">
-    <h2>Quelques réalisations</h2>
-    <div class="grid">
-       <img src="2.jpg" alt="Peinture intérieures">
-      <img src="3.jpg" alt="Peinture intérieure">
-      <img src="4.jpg" alt="Échafaudage facade">
-      <img src="5.jpg" alt="Échafaudage facade">
-      <img src="6.jpg" alt="Peinture EXT">
-      <img src="7.jpg" alt="engin de terassement">
-      <img src="8.jpg" alt="Déchets encombrants">
-      <img src="9.jpg" alt="Déchets encombrants">
-      <img src="10.jpg" alt="Déchets encombrants">
-      <img src="11.jpg" alt="Déchets encombrants">
-      <img src="12.jpg" alt="Déchets encombrants">
-      <img src="13.jpg" alt="AUTRES">
-      <img src="14.jpg" alt="AUTRES">
-      <img src="15.jpg" alt="AUTRES">
-      <img src="16.jpg" alt="AUTRES">
-      <img src="17.jpg" alt="AUTRES">
-      <img src="18.jpg" alt="AUTRES">
-      <img src="19.jpg" alt="AUTRES">
-      <img src="20.jpg" alt="AUTRES">
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#accueil">
+        <img src="logo.jpg" alt="Logo CF2B SARL" />
+        <div class="brand-text">
+          <div class="brand-title">CF2B SARL</div>
+          <div class="brand-sub">Ciment • Fer • Béton • Bâtiment</div>
+        </div>
+      </a>
+
+      <nav class="menu">
+        <a href="#services">Services</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#chiffres">Chiffres</a>
+        <a href="#contact">Contact</a>
+        <a class="cta-mini" href="https://wa.me/262639209333" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
     </div>
-  </section> <section class="stats" id="stats">
-    <h2>Quelques chiffres</h2>
-    <p><strong>Créé en :</strong> 2008<br />
-       <strong>Capital :</strong> 1 000 €<br />
-       <strong>Marchés publics récents :</strong> Micro-crèche (178 750 €), Terrassement (96 300 €)</p>
-  </section> <section class="contact" id="contact">
-    <h2>Contactez-nous</h2>
-    <p><strong>Adresse :</strong> 150 Av. Ahmada Soumaila, Carrefour Ya Coconi, 97640 SADA, Mayotte</p>
-    <p><strong>Gérant :</strong> M. ABDOU Toihir</p>
-    <p><strong>Email :</strong> <a href=mailto:contact@cf2b.yt>contact@cf2b.yt</a></p>
-    <p><strong>Téléphone :</strong> <a href=tel:+262639209333>+262 639 20 93 33</a></p>
-    
-   <form action="https://formspree.io/f/mnnvvjyk" method="POST">
-    <input type="text" name="name" placeholder="Votre nom" required>
-    <input type="email" name="email" placeholder="Votre email" required>
-    <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-    <input type="text" name="_gotcha" style="display:none">
-  <iframe 
-    src="https://www.google.com/maps?q=150+Av.+Ahmada+Soumaila,+Sada,+Mayotte&output=embed" 
-    allowfullscreen 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-  </section> <footer>
-    © 2025 CF2B SARL - Tous droits réservés
+  </div>
+
+  <header class="hero" id="accueil">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Entreprise de construction à Mayotte depuis 2008</div>
+        <h1>Construire solide.<br>Réaliser proprement.<br>Livrer avec sérieux.</h1>
+        <p class="lead">CF2B SARL intervient sur vos projets de gros œuvre, fondations, ferraillage, terrassement, rénovation et travaux extérieurs. Interventions en gros œuvre, fondations, ferraillage, terrassement, rénovation et travaux extérieurs, avec des réalisations concrètes sur le terrain.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:+262639209333">Appeler maintenant</a>
+          <a class="btn btn-secondary" href="#contact">Demander un devis</a>
+        </div>
+
+        <div class="hero-points">
+          <div class="point">
+            <strong>+15 ans</strong>
+            <span>d'expérience terrain</span>
+          </div>
+          <div class="point">
+            <strong>Gros œuvre</strong>
+            <span>fondations et béton armé</span>
+          </div>
+          <div class="point">
+            <strong>Mayotte</strong>
+            <span>interventions locales</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="Média (8).jfif" alt="Chantier CF2B terrassement et fondations" />
+        <div class="hero-card-badge">
+          <strong>Chantiers réels, images réelles</strong>
+          <span>Ferraillage, terrassement, reprises, fondations, façades et finitions.</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Présentation</div>
+          <h2>Entreprise de construction à Mayotte</h2>
+        </div>
+        <p>CF2B SARL intervient sur des travaux de gros œuvre, fondations, terrassement, ferraillage et rénovation, avec une expérience terrain et des réalisations concrètes.</p>
+      </div>
+
+      <div class="intro-grid">
+        <div class="panel">
+          <p>CF2B SARL intervient sur des chantiers de construction, de béton, de ferraillage et de travaux extérieurs. L’entreprise réalise des projets de fondations, terrassement et rénovation sur tout le territoire de Mayotte.</p>
+          <ul>
+            <li>+15 ans d’expérience dans le bâtiment</li>
+            <li>Interventions sur tout type de chantier</li>
+            <li>Travail soigné et suivi de chantier</li>
+            <li>Contact direct et réactif</li>
+          </ul>
+        </div>
+
+        <div class="mini-gallery">
+          <img src="4.jpg" alt="Ravalement de façade et finitions" />
+          <img src="7.jpg" alt="Engin de chantier CF2B" />
+          <img src="Média (11).jfif" alt="Ferraillage de fondation" />
+          <img src="Média (5).jfif" alt="Travaux de terrassement et implantation" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Services</div>
+          <h2>Nos prestations</h2>
+        </div>
+        <p>Gros œuvre, terrassement, rénovation et travaux extérieurs réalisés à Mayotte.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service">
+          <div class="icon">▣</div>
+          <h3>Gros œuvre & fondations</h3>
+          <p>Maçonnerie, fondations, ferraillage, coffrage, dallage béton et structures porteuses.</p>
+        </article>
+
+        <article class="service">
+          <div class="icon">△</div>
+          <h3>Terrassement & VRD</h3>
+          <p>Préparation de terrain, fouilles, nivellement, réseaux divers et aménagements extérieurs.</p>
+        </article>
+
+        <article class="service">
+          <div class="icon">◫</div>
+          <h3>Rénovation & finitions</h3>
+          <p>Ravalement, peinture, reprises, aménagement intérieur et remise en état de bâtiments.</p>
+        </article>
+
+        <article class="service">
+          <div class="icon">◉</div>
+          <h3>Travaux publics</h3>
+          <p>Interventions de chantier, logistique, démolition, engins et travaux de proximité.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="realisations">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Réalisations</div>
+          <h2>Quelques réalisations</h2>
+        </div>
+        <p>Exemples de chantiers réalisés par CF2B : fondations, finitions, terrassement et ferraillage.</p>
+      </div>
+
+      <div class="gallery-toolbar">
+        <span class="chip">Façades</span>
+        <span class="chip">Terrassement</span>
+        <span class="chip">Fondations</span>
+        <span class="chip">Ferraillage</span>
+        <span class="chip">Engins</span>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-card wide tall">
+          <img src="4.jpg" alt="Bâtiment avec ravalement et échafaudage" />
+          <figcaption class="gallery-overlay"><strong>Façade et finitions</strong><span>Travaux extérieurs et mise en valeur du bâtiment</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card tall">
+          <img src="2.jpg" alt="Travaux de peinture intérieure" />
+          <figcaption class="gallery-overlay"><strong>Peinture intérieure</strong><span>Finitions et rénovation</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card tall">
+          <img src="3.jpg" alt="Travaux de finition intérieure" />
+          <figcaption class="gallery-overlay"><strong>Finitions intérieures</strong><span>Intervention en hauteur et soin des détails</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card wide">
+          <img src="Média (8).jfif" alt="Fouilles et implantation sur chantier" />
+          <figcaption class="gallery-overlay"><strong>Implantation et terrassement</strong><span>Préparation du terrain et démarrage de structure</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="Média (12).jfif" alt="Nettoyage de terrain et évacuation" />
+          <figcaption class="gallery-overlay"><strong>Préparation de chantier</strong><span>Dégagement et mise en sécurité du site</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="Média (10).jfif" alt="Travail de fondation et coffrage" />
+          <figcaption class="gallery-overlay"><strong>Fondations</strong><span>Mise en œuvre et suivi de structure</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card tall">
+          <img src="Média (11).jfif" alt="Ferraillage vertical de fondation" />
+          <figcaption class="gallery-overlay"><strong>Ferraillage</strong><span>Béton armé et renforts structurels</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="Média (9).jfif" alt="Tranchées et engin de chantier" />
+          <figcaption class="gallery-overlay"><strong>Travaux de tranchée</strong><span>Terrassement avec engin sur site</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="7.jpg" alt="Mini pelle sur chantier" />
+          <figcaption class="gallery-overlay"><strong>Matériel de chantier</strong><span>Interventions avec engins adaptés</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card wide">
+          <img src="45e7598d-8331-49dd-aad5-1fc4ceed4287.png" alt="Zone de chantier CF2B" />
+          <figcaption class="gallery-overlay"><strong>Avancement de chantier</strong><span>Suivi des travaux sur site</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="ddb369dd-486e-4f6e-bdc2-3bedb9272a76.png" alt="Vue chantier avec camion et terrain" />
+          <figcaption class="gallery-overlay"><strong>Logistique chantier</strong><span>Organisation et moyens sur place</span></figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+          <img src="2759bc70-4fb4-4078-9fa9-b04750bc24db.png" alt="Ferraillage en tranchée" />
+          <figcaption class="gallery-overlay"><strong>Vue technique</strong><span>Ferraillage, tranchées et précision d’exécution</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="chiffres">
+    <div class="container">
+      <div class="stats-wrap">
+        <div class="section-head" style="margin-bottom: 12px;">
+          <div>
+            <div class="kicker" style="color:#ffb347;">Chiffres clés</div>
+            <h2 style="color:white;">Quelques chiffres</h2>
+          </div>
+          <p style="color:rgba(255,255,255,0.72);">Quelques repères sur l’activité et l’expérience de l’entreprise.</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <strong>2008</strong>
+            <p>année de création</p>
+          </div>
+          <div class="stat">
+            <strong>+15 ans</strong>
+            <p>d'expérience terrain</p>
+          </div>
+          <div class="stat">
+            <strong>100\+ </strong>
+            <p>chantiers réalisés</p>
+          </div>
+          <div class="stat">
+            <strong>Réactivité</strong>
+            <p>intervention rapide</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Pourquoi CF2B</div>
+          <h2>Nos atouts</h2>
+        </div>
+        <p>Expérience terrain, présence locale et savoir-faire au service de vos chantiers.</p>
+      </div>
+
+      <div class="reasons-grid">
+        <article class="reason">
+          <h3>Expérience terrain</h3>
+          <p>Une présence depuis 2008 avec des réalisations concrètes et variées.</p>
+        </article>
+        <article class="reason">
+          <h3>Chantiers visibles</h3>
+          <p>Le site montre de vraies photos de travaux, pas des images génériques.</p>
+        </article>
+        <article class="reason">
+          <h3>Intervention locale</h3>
+          <p>Entreprise implantée à Mayotte avec contact direct et accessible.</p>
+        </article>
+        <article class="reason">
+          <h3>Contact immédiat</h3>
+          <p>Téléphone, mail, formulaire et WhatsApp en un seul endroit.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Contact</div>
+          <h2>Contact</h2>
+        </div>
+        <p>Retrouvez ici les informations de contact pour toute demande de renseignements ou de devis.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Contactez CF2B SARL</h3>
+          <p>Construction, rénovation, terrassement, fondations et travaux extérieurs à Mayotte.</p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <div>📍</div>
+              <div>
+                <strong>Adresse</strong>
+                <span>150 Av. Ahmada Soumaila, Carrefour Ya Coconi, 97640 SADA, Mayotte</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>📞</div>
+              <div>
+                <strong>Téléphone</strong>
+                <a href="tel:+262639209333">+262 639 20 93 33</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>✉️</div>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:contact@cf2b.yt">contact@cf2b.yt</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>👤</div>
+              <div>
+                <strong>Gérant</strong>
+                <span>M. ABDOU Toihir</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://wa.me/262639209333" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-secondary" style="background:#162033;border-color:#162033;" href="tel:+262639209333">Appeler</a>
+          </div>
+
+          <form action="https://formspree.io/f/mnnvvjyk" method="POST">
+            <input type="text" name="name" placeholder="Votre nom" required />
+            <input type="email" name="email" placeholder="Votre email" required />
+            <textarea name="message" placeholder="Votre message" required></textarea>
+            <input type="text" name="_gotcha" style="display:none" />
+            <button type="submit">Envoyer le message</button>
+          </form>
+        </div>
+
+        <div class="contact-card">
+          <iframe
+            src="https://www.google.com/maps?q=150+Av.+Ahmada+Soumaila,+Sada,+Mayotte&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2025 CF2B SARL - Tous droits réservés</div>
+      <div>Ciment • Fer • Béton • Bâtiment</div>
+    </div>
   </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/262639209333" target="_blank" rel="noopener" aria-label="Contacter CF2B sur WhatsApp">💬</a>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="close" id="closeLightbox" aria-label="Fermer">×</button>
+    <img id="lightboxImg" src="" alt="Agrandissement d'image" />
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.gallery-card img, .mini-gallery img, .hero-card img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeLightbox = document.getElementById('closeLightbox');
+
+    cards.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || 'Image';
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeBox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    }
+
+    closeLightbox.addEventListener('click', closeBox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeBox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeBox();
+    });
+  </script>
 </body>
 </html>
